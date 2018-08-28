@@ -8,24 +8,21 @@ public class Add extends Command {
     @Override
     public void execute(String[] args) {
         switch (args[0]) {
-            case "user": {
+            case "user":
                 this.dbService.addUser(args);
                 break;
-            }
-            case "content": {
+            case "content":
                 this.dbService.addContent(args);
                 break;
-            }
-            case "type": {
+            case "type":
                 this.dbService.addType(args);
                 break;
-            }
-            case "image": {
+            case "image":
                 this.dbService.addImage(args);
                 break;
-            }
             case "vote": {
                 this.dbService.addVote(args);
+                break;
             }
         }
     }

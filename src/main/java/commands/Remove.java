@@ -7,20 +7,23 @@ public class Remove extends Command {
 
     @Override
     public void execute(String[] args) {
-        if (args[0].equals("user") && args.length == 2) {
-            this.dbService.removeUser(args);
-        }
-        if (args[0].equals("content") && args.length == 2) {
-            this.dbService.removeContent(args);
-        }
-        if (args[0].equals("type") && args.length == 2) {
-            this.dbService.removeType(args);
-        }
-        if (args[0].equals("image") && args.length == 2) {
-            this.dbService.removeImage(args);
-        }
-        if (args[0].equals("vote") && args.length == 3) {
-            this.dbService.removeVote(args);
+        switch (args[0]) {
+            case "user":
+                this.dbService.removeUser(args);
+                break;
+            case "content":
+                this.dbService.removeContent(args);
+                break;
+            case "type":
+                this.dbService.removeType(args);
+                break;
+            case "image":
+                this.dbService.removeImage(args);
+                break;
+            case "vote": {
+                this.dbService.removeVote(args);
+                break;
+            }
         }
     }
 }

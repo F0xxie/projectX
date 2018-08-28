@@ -28,21 +28,14 @@ public class Main {
             String[] commands = command.split(" ");
             if (!map.containsKey(commands[0])) continue;
             Command c = (Command)map.get(commands[0]);
-            System.out.println(commands.length);
+
             if (commands.length == 1) {
                 c.execute();
                 continue;
             }
             String[] commArgs = new String[commands.length - 1];
             System.arraycopy(commands, 1, commArgs, 0, commands.length - 1);
-            System.out.print("[");
-            for (int j = 0; j < commArgs.length; ++j) {
-                if (j > 0) {
-                    System.out.print(", ");
-                }
-                System.out.print(commArgs[j]);
-            }
-            System.out.println("]");
+
             c.execute(commArgs);
         } while (true);
     }
