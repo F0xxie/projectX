@@ -6,7 +6,7 @@
 
     <groupId>projectX</groupId>
     <artifactId>projectX</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>database</version>
     <packaging>war</packaging>
 
     <dependencies>

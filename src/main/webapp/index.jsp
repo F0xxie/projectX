@@ -3,13 +3,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Home</title>
+	<title>Oh look, them buttons</title>
 </head>
+
 <body>
-<h1>Hello World!</h1>
-<c:if test="${not empty param.name}">
-	<p>It works</p>
-</c:if>
+	<%
+	if(request.getParameter("users") != null) {
+	%>
+	<jsp:forward page="users.jsp"></jsp:forward>
+	<%
+	return;
+	}
+	%>
+	<form action="index.jsp" method = "POST">
+		<input type="submit" name="users" value="Users">
+	</form>
+	<form action="index.jsp" method = "POST">
+		<input type="submit" name="content" value="Content">
+	</form>
+	<form action="index.jsp" method = "POST">
+		<input type="submit" name="types" value="Types">
+	</form>
 </body>
 </html>
