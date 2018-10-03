@@ -3,26 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Oh look, them buttons</title>
+	<title>Oh look, them links</title>
 </head>
 
 <body>
-	<%
-	if(request.getParameter("users") != null) {
-	%>
-	<jsp:forward page="users.jsp"></jsp:forward>
-	<%
-	return;
-	}
-	%>
-	<form action="index.jsp" method = "POST">
-		<input type="submit" name="users" value="Users">
-	</form>
-	<form action="index.jsp" method = "POST">
-		<input type="submit" name="content" value="Content">
-	</form>
-	<form action="index.jsp" method = "POST">
-		<input type="submit" name="types" value="Types">
-	</form>
+	<a href="/projectX-database/users">users</a><br>
+	<a href="/projectX-database/users">content</a><br>
+	<a href="/projectX-database/users">types</a><br>
 </body>
 </html>

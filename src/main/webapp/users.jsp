@@ -1,7 +1,7 @@
 <%@ page import="entity.User" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="utils.DBService" %>
 <%@ page import="dao.UserDAO" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 <html>
 <head>
     <title>Users table</title>
@@ -31,9 +31,7 @@
         <th>Password</th>
     </tr>
     <%
-    DBService dbService = new DBService();
-    ArrayList<User> mass;
-    mass = dbService.getUsers();
+    List<User> mass = (ArrayList<User>)request.getAttribute("users");
     for (User user : mass) {
     %>
     <tr>
