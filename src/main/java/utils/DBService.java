@@ -4,7 +4,7 @@ import dao.*;
 import entity.*;
 import java.util.ArrayList;
 
-//TODO убрать аргументы
+//TODO переписать этот говнокод когда-нибудь
 public class DBService {
     private UserDAO userDAO = new UserDAO();
     private ContentDAO contentDAO = new ContentDAO();

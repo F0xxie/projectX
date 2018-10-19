@@ -12,11 +12,9 @@ public class TypeDAO {
         try {
             this.myDBController.connect();
             this.myDBController.inquiry(String.format("INSERT INTO content_type (type) VALUES ('%s')", type.getType()));
-            System.out.println("Type added.");
             this.myDBController.connect().close();
         }
         catch (Exception e) {
-            System.out.println("Can't add type");
         }
     }
 
@@ -24,7 +22,6 @@ public class TypeDAO {
         try {
             this.myDBController.connect();
             this.myDBController.inquiry("DELETE FROM content_type\nWHERE type_id=" + type.getId() + ";");
-            System.out.println("Type deleted.");
             this.myDBController.connect().close();
         }
         catch (Exception e) {

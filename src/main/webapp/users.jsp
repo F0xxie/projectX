@@ -1,68 +1,75 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="entity.User" %>
 <%@ page import="dao.UserDAO" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
-<html>
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>Users table</title>
-    <style>
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
-        td, th {
-            border: 1px solid #000000;
-            text-align: left;
-            padding: 8px;
-        }
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
-
 <body>
-<h2>Users:</h2>
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Login</th>
-        <th>Password</th>
-    </tr>
-    <%
-    List<User> mass = (ArrayList<User>)request.getAttribute("users");
-    for (User user : mass) {
-    %>
-    <tr>
-        <td><% out.print(user.getId()); %></td>
-        <td><% out.print(user.getLogin()); %></td>
-        <td><% out.print(user.getPassword()); %></td>
-    </tr>
-    <%
-    }
-    %>
-</table>
-<br>
 
-<form action = "users.jsp" method = "POST">
-    <input type = "text" name = "first_name" placeholder="Username">
-    <br />
-    <input type = "text" name = "last_name" placeholder="Password"/>
+<div class="container">
+    <h2>Users</h2>
+    <p>The list of users:</p>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Login</th>
+            <th>Password</th>
+        </tr>
+        </thead>
+        <tbody>
+        <%
+            List<User> user = (ArrayList<User>)request.getAttribute("users");
+            pageContext.setAttribute("users", user);
+        %>
+        <c:forEach var = "user" items = "${users}">
+        <tr>
+            <td><c:out value="${user.id}"/></td>
+            <td><c:out value="${user.login}"/></td>
+            <td><c:out value="${user.password}"/></td>
+        </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</div>
+
+<div class="container">
+    <h2>User control:</h2>
+    <p>Add user</p>
+    <form action="users.jsp" method = "POST">
+        <div class="form-group">
+            <input type="text" class="form-control" name = "first_name" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="last_name" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary" id="user_add">Submit</button>
+    </form>
     <br>
-    <input type = "submit" name="user_add" value = "Submit"/>
-</form>
-
-<form action="users.jsp" method = "POST">
-    <input type = "text" name = "user_id" placeholder="ID to delete">
-    <br />
-    <input type="submit" name="user_delete" value="Delete">
-</form>
-
+    <p>Remove user</p>
+    <form action="users.jsp" method = "POST">
+        <div class="form-group">
+            <input type="text" class="form-control" name = "user_id" placeholder="ID for deletion">
+        </div>
+        <button type="submit" class="btn btn-primary" id="user_delete">Submit</button>
+    </form>
+</div>
 
 <%
     UserDAO userDAO = new UserDAO();
-    if(request.getParameter("user_add") != null) {
+
+    if(request.getParameter("first_name") != null) {
         if(!request.getParameter("first_name").equals("") && !request.getParameter("last_name").equals("")) {
             userDAO.create(new User(0, request.getParameter("first_name"), request.getParameter("last_name")));
         }
