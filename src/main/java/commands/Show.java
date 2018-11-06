@@ -11,48 +11,48 @@ public class Show extends Command {
     public void execute(String[] args) {
         try {
             if (args[0].equals("users")) {
-                ArrayList<User> mass;
-                mass = this.dbService.getUsers();
+                ArrayList<User> users;
+                users = this.dbService.getUsers();
                 System.out.println("Users:");
-                for (User user : mass) {
+                for (User user : users) {
                     System.out.println("" + user.getId() + ": " + user.getLogin() + "/" + user.getPassword());
                 }
             }
             if (args[0].equals("content")) {
-                ArrayList<Content> mass;
-                mass = this.dbService.getContent();
+                ArrayList<Content> contents;
+                contents = this.dbService.getContent();
                 System.out.println("Content:");
-                for (Content content : mass) {
+                for (Content content : contents) {
                     System.out.println("" + content.getContentId() + ": [Author: " + content.getAuthorId() + ", type: " + content.getType() + ", parent: " + content.getParentContentId() + "] Date: " + content.getDate() + " [" + content.getTitle() + " - " + content.getContentBody() + "]");
                 }
             }
             if (args[0].equals("types")) {
-                ArrayList<Type> mass;
-                mass = this.dbService.getType();
+                ArrayList<Type> types;
+                types = this.dbService.getType();
                 System.out.println("Content types:");
-                for (Type type : mass) {
+                for (Type type : types) {
                     System.out.println("" + type.getId() + ": " + type.getType());
                 }
             }
             if (args[0].equals("images")) {
-                ArrayList<Image> mass;
-                mass = this.dbService.getImage();
+                ArrayList<Image> images;
+                images = this.dbService.getImage();
                 System.out.println("Content images:");
-                for (Image image : mass) {
+                for (Image image : images) {
                     System.out.println("" + image.getContentId() + ": " + image.getImageUrl());
                 }
             }
             if (args[0].equals("votes")) {
-                ArrayList<Vote> mass;
-                mass = this.dbService.getVote();
+                ArrayList<Vote> votes;
+                votes = this.dbService.getVote();
                 System.out.println("Votes:");
-                for (Vote vote : mass) {
+                for (Vote vote : votes) {
                     System.out.println("" + vote.getUserId() + " | " + vote.getContentId());
                 }
             }
         }
-        catch (Exception mass) {
-            // empty catch block
+        catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

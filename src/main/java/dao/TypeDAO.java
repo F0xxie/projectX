@@ -1,6 +1,7 @@
 package dao;
 
 import entity.Type;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import utils.MyDBController;
@@ -10,19 +11,20 @@ public class TypeDAO {
 
     public void create(Type type) {
         try {
-            this.myDBController.connect();
+            Connection connect = this.myDBController.connect();
             this.myDBController.inquiry(String.format("INSERT INTO content_type (type) VALUES ('%s')", type.getType()));
-            this.myDBController.connect().close();
+            connect.close();
         }
         catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
     public void remove(Type type) {
         try {
-            this.myDBController.connect();
+            Connection connect = this.myDBController.connect();
             this.myDBController.inquiry("DELETE FROM content_type\nWHERE type_id=" + type.getId() + ";");
-            this.myDBController.connect().close();
+            connect.close();
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -30,18 +32,18 @@ public class TypeDAO {
     }
 
     public ArrayList<Type> getAll() {
-        ArrayList<Type> mass = new ArrayList<Type>();
+        ArrayList<Type> types = new ArrayList<Type>();
         try {
-            this.myDBController.connect();
+            Connection connect = this.myDBController.connect();
             ResultSet rs = this.myDBController.inquiryWithResult("select * from content_type");
             while (rs.next()) {
-                mass.add(new Type(rs.getInt(1), rs.getString(2)));
+                types.add(new Type(rs.getInt(1), rs.getString(2)));
             }
-            this.myDBController.connect().close();
+            connect.close();
         }
         catch (Exception rs) {
-            // empty catch block
+            rs.printStackTrace();
         }
-        return mass;
+        return types;
     }
 }

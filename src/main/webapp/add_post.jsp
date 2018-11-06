@@ -17,20 +17,24 @@
 <body>
 
 <div class="container">
+    <a href="/projectX-database"><< Back</a>
+    <br>
     <h2>Adding new post</h2>
-    <form action="/projectX-database" method = "POST">
-        <div class="form-group">
-            <input type="text" class="form-control" id="post_body" name="post_body" placeholder="Text..." required>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+    <br>
+    <label for="tfield">Enter text:</label>
+    <textarea class="form-control" rows="5" id="tfield" name="postbody" form="text_body_field"></textarea>
+    <form action="add_post.jsp" method = "POST" id="text_body_field">
+        <button type="submit" class="btn btn-primary" id="post_add">Submit</button>
     </form>
 </div>
 
 <%
     TypeDAO typeDAO = new TypeDAO();
 
-    if(request.getParameter("post_body") != null) {
-        typeDAO.create(new Type(0, request.getParameter("post_body")));
+    if(request.getParameter("postbody") != null) {
+        String postbody = request.getParameter("postbody");
+        String final_pbody = postbody.replace("'", "`");
+        typeDAO.create(new Type(0, final_pbody));
     }
 %>
 

@@ -18,6 +18,8 @@
 <body>
 
 <div class="container">
+    <a href="/projectX-database"><< Back</a>
+    <br>
     <h2>Users</h2>
     <p>The list of users:</p>
     <table class="table table-hover">
@@ -49,10 +51,10 @@
     <p>Add user</p>
     <form action="users.jsp" method = "POST">
         <div class="form-group">
-            <input type="text" class="form-control" name = "first_name" placeholder="Username">
+            <input type="text" class="form-control" name = "first_name" placeholder="Username" required>
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" name="last_name" placeholder="Password">
+            <input type="password" class="form-control" name="last_name" placeholder="Password" required>
         </div>
         <button type="submit" class="btn btn-primary" id="user_add">Submit</button>
     </form>
@@ -60,7 +62,7 @@
     <p>Remove user</p>
     <form action="users.jsp" method = "POST">
         <div class="form-group">
-            <input type="text" class="form-control" name = "user_id" placeholder="ID for deletion">
+            <input type="text" class="form-control" name = "user_id" placeholder="ID for deletion" required>
         </div>
         <button type="submit" class="btn btn-primary" id="user_delete">Submit</button>
     </form>
@@ -68,7 +70,6 @@
 
 <%
     UserDAO userDAO = new UserDAO();
-
     if(request.getParameter("first_name") != null) {
         if(!request.getParameter("first_name").equals("") && !request.getParameter("last_name").equals("")) {
             userDAO.create(new User(0, request.getParameter("first_name"), request.getParameter("last_name")));

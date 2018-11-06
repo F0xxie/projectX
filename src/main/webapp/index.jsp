@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Users table</title>
+    <title>Main page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -16,7 +16,7 @@
 <body>
 
 <div class="container">
-    <a href="/projectX-database/users">users</a>
+    <a href="/projectX-database/users">users</a> <%-- Иначе не работает на моём компьютере, не знаю, в чём причина --%>
     <br><br><br>
     <h2>Main page</h2>
     <p>Nothing to see here</p>
@@ -24,15 +24,15 @@
     <input type = "submit" name="post_redirect" value = "Add post"/>
     </form>
     <br>
-    <table class="table table-borderless">
+    <table class="table table-borderless table-hover">
         <tbody>
         <%
             List<Type> posts = (ArrayList<Type>)request.getAttribute("posts");
-            pageContext.setAttribute("posts", posts);
+            pageContext.setAttribute("post", posts);
         %>
-        <c:forEach var = "posts" items = "${posts}">
+        <c:forEach var = "post" items = "${posts}">
         <tr>
-            <td><c:out value="${posts.type}"/></td>
+            <td><c:out value="${post.type}"/></td>
         </tr>
         </c:forEach>
         </tbody>

@@ -9,11 +9,7 @@ public class MyDBController {
     public Connection connect() {
         try {
             Class.forName("org.h2.Driver");
-            //Create DB in E:/data/sample.mv.db
-            //Connection connection = DriverManager.getConnection("jdbc:h2:file:~/data/sample;INIT=RUNSCRIPT FROM 'src/main/resources/init-base.ddl'","sa","");
-            //Create DB in memory
-            Connection connection = DriverManager.getConnection("jdbc:h2:mem:;INIT=RUNSCRIPT FROM 'src/main/resources/init-base.ddl'","sa","");
-            //Use DB from E:/data/sample.mv.db
+            connection = DriverManager.getConnection("jdbc:h2:file:~/data/sample;INIT=RUNSCRIPT FROM 'classpath:init-base.ddl'","sa","");
             //connection = DriverManager.getConnection("jdbc:h2:file:~/data/sample", "sa", "");
             statement = connection.createStatement();
         } catch (Exception e) {

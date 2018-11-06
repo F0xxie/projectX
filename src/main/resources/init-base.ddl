@@ -1,4 +1,4 @@
-CREATE TABLE users
+CREATE TABLE IF NOT EXISTS users
 (
 user_id int AUTO_INCREMENT NOT NULL,
 login varchar NOT NULL,
@@ -6,7 +6,7 @@ password varchar NOT NULL,
 PRIMARY KEY (user_id)
 );
 
-CREATE TABLE content
+CREATE TABLE IF NOT EXISTS content
 (
 content_id int AUTO_INCREMENT NOT NULL,
 author_id int  NOT NULL,
@@ -18,20 +18,20 @@ content_body text  NOT NULL,
 PRIMARY KEY (content_id)
 );
 
-CREATE TABLE content_type
+CREATE TABLE IF NOT EXISTS content_type
 (
 type_id int AUTO_INCREMENT NOT NULL,
-type varchar  NOT NULL,
+type text NOT NULL,
 PRIMARY KEY (type_id),
 );
 
-CREATE TABLE content_image
+CREATE TABLE IF NOT EXISTS content_image
 (
 content_id int NOT NULL,
 image_url varchar  NOT NULL
 );
 
-CREATE TABLE votes
+CREATE TABLE IF NOT EXISTS votes
 (
 user_id int NOT NULL,
 content_id int  NOT NULL,
