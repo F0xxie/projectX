@@ -17,7 +17,8 @@ public class ShowContent extends HttpServlet {
         ArrayList<Type> posts = dbService.getType();
 
         request.setAttribute("posts", posts);
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
+
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/jsp/index.jsp");
         dispatcher.forward(request, response);
     }
 }

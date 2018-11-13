@@ -17,7 +17,7 @@ public class ShowUsers extends HttpServlet {
         ArrayList<User> users = dbService.getUsers();
 
         request.setAttribute("users", users);
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/users.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/jsp/users.jsp");
         dispatcher.forward(request, response);
     }
 }

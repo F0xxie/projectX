@@ -16,7 +16,7 @@
 <body>
 
 <div class="container">
-    <a href="/projectX-database/users">users</a> <%-- Иначе не работает на моём компьютере, не знаю, в чём причина --%>
+    <a href="users">users</a> <%-- Иначе не работает на моём компьютере, не знаю, в чём причина --%>
     <br><br><br>
     <h2>Main page</h2>
     <p>Nothing to see here</p>

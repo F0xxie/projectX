@@ -18,7 +18,7 @@
 <body>
 
 <div class="container">
-    <a href="/projectX-database"><< Back</a>
+    <a href="/"><< Back</a>
     <br>
     <h2>Users</h2>
     <p>The list of users:</p>
@@ -31,10 +31,6 @@
         </tr>
         </thead>
         <tbody>
-        <%
-            List<User> user = (ArrayList<User>)request.getAttribute("users");
-            pageContext.setAttribute("users", user);
-        %>
         <c:forEach var = "user" items = "${users}">
         <tr>
             <td><c:out value="${user.id}"/></td>

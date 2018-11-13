@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 //TODO переписать этот говнокод когда-нибудь
 public class DBService {
-    private UserDAO userDAO = new UserDAO();
+    private UserDAO userDAO = new JdbcUserDAO();
     private ContentDAO contentDAO = new ContentDAO();
     private TypeDAO typeDAO = new TypeDAO();
     private ImageDAO imageDAO = new ImageDAO();

@@ -17,7 +17,7 @@
 <body>
 
 <div class="container">
-    <a href="/projectX-database"><< Back</a>
+    <a href="/"><< Back</a>
     <br>
     <h2>Adding new post</h2>
     <br>
