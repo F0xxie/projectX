@@ -12,24 +12,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <style>
+        tr {
+            text-align: justify;
+        }
+    </style>
 </head>
 <body>
 
 <div class="container">
-    <a href="users">users</a> <%-- Иначе не работает на моём компьютере, не знаю, в чём причина --%>
+    <a href="users">users</a>
     <br><br><br>
     <h2>Main page</h2>
     <p>Nothing to see here</p>
-    <form action = "add_post.jsp" method = "POST">
-    <input type = "submit" name="post_redirect" value = "Add post"/>
-    </form>
-    <br>
+    <a href="newpost" class="btn btn-info" role="button">Add post</a>
+    <br><br>
     <table class="table table-borderless table-hover">
         <tbody>
-        <%
-            List<Type> posts = (ArrayList<Type>)request.getAttribute("posts");
-            pageContext.setAttribute("post", posts);
-        %>
         <c:forEach var = "post" items = "${posts}">
         <tr>
             <td><c:out value="${post.type}"/></td>

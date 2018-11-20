@@ -1,13 +1,16 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Foxy
+  Date: 20/11/2018
+  Time: 2:22 AM
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="dao.TypeDAO" %>
-<%@ page import="entity.Type" %>
-<%@ page import="java.util.function.Function" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>New post</title>
+    <title>User management</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -18,15 +21,20 @@
 <body>
 
 <div class="container">
-    <a href="/"><< Back</a>
-    <br>
-    <h2>New post</h2>
-    <br>
-    <textarea class="form-control" rows="5" id="tfield" name="postbody" form="text_body_field" required></textarea>
-    <br>
-    <form id="text_body_field">
-        <button type="submit" class="btn btn-primary" id="post_add">Add post</button>
+    <a href="/users"><< Back</a>
+
+    <h2>User control:</h2>
+    <form>
+        <div class="form-group">
+            <input type="text" class="form-control" name = "first_name" placeholder="Username" required>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="last_name" placeholder="Password" required>
+        </div>
+        <button type="submit" class="btn btn-primary" id="user_add">Save</button>
     </form>
+    <br>
 </div>
+
 </body>
 </html>

@@ -7,6 +7,7 @@
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
+
     <servlet>
         <servlet-name>ShowUsers</servlet-name>
         <servlet-class>servlets.ShowUsers</servlet-class>
@@ -15,6 +16,15 @@
         <servlet-name>ShowContent</servlet-name>
         <servlet-class>servlets.ShowContent</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddContent</servlet-name>
+        <servlet-class>servlets.AddContent</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddUser</servlet-name>
+        <servlet-class>servlets.AddUser</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>ShowUsers</servlet-name>
         <url-pattern>/users</url-pattern>
@@ -23,4 +33,13 @@
         <servlet-name>ShowContent</servlet-name>
         <url-pattern></url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddContent</servlet-name>
+        <url-pattern>/newpost</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddUser</servlet-name>
+        <url-pattern>/users/new</url-pattern>
+    </servlet-mapping>
+
 </web-app>
