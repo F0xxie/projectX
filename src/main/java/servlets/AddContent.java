@@ -19,6 +19,6 @@ public class AddContent extends HttpServlet {
         dispatcher.forward(request, response);
 
         String final_pbody = postbody.replace("'", "`");
-        typeDAO.create(new Type(0, final_pbody));
+        //typeDAO.create(new Type(0, final_pbody));
     }
 }

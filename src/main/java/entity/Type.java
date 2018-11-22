@@ -6,30 +6,29 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 @Entity
-@Table(name="content_type")
-public class Type {
-    @Id
-    @Column(name="type_id")
-    @GeneratedValue(strategy=GenerationType.AUTO)
+@Table(name = "content_type")
+public class Type implements Serializable {
     private int type_id;
-    @Column(name="type")
     private String type;
 
-    protected Type() {
-    }
-
-    public Type(int id, String t) {
-        this.type_id = id;
-        this.type = t;
-    }
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "type_id")
     public int getId() {
-        return this.type_id;
+        return type_id;
+    }
+    public void setId(int id) {
+        this.type_id = id;
     }
 
+    @Column(name = "type")
     public String getType() {
-        return this.type;
+        return type;
+    }
+    public void setType(String type) {
+        this.type = type;
     }
 }

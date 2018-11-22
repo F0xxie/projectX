@@ -14,7 +14,7 @@ public class User {
     @Column(name="password")
     private String password;
 
-    protected User() {
+    public User() {
     }
 
     public User(int id, String l, String p) {
@@ -28,8 +28,9 @@ public class User {
     }
 
     public String getLogin() { return this.login; }
-
     public String getPassword() {
         return this.password;
     }
+    public void setLogin(String login) {this.login = login; }
+    public void setPassword(String password) {this.password = password; }
 }

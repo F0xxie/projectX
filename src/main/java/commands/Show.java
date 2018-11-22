@@ -28,11 +28,11 @@ public class Show extends Command {
             }
             if (args[0].equals("types")) {
                 ArrayList<Type> types;
-                types = this.dbService.getType();
+                //types = this.dbService.getType();
                 System.out.println("Content types:");
-                for (Type type : types) {
-                    System.out.println("" + type.getId() + ": " + type.getType());
-                }
+                //for (Type type : types) {
+                //    System.out.println("" + type.getId() + ": " + type.getType());
+                //}
             }
             if (args[0].equals("images")) {
                 ArrayList<Image> images;

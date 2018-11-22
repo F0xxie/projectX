@@ -18,14 +18,14 @@
 <body>
 
 <div class="container">
-    <a href="/"><< Back</a>
     <br>
     <h2>New post</h2>
     <br>
     <textarea class="form-control" rows="5" id="tfield" name="postbody" form="text_body_field" required></textarea>
     <br>
     <form id="text_body_field">
-        <button type="submit" class="btn btn-primary" id="post_add">Add post</button>
+        <button type="submit" class="btn btn-primary" id="post_add">Add</button>
+        <a href="/" class="btn btn-primary" role="button">Cancel</a>
     </form>
 </div>
 </body>

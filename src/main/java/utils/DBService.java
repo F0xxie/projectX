@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 //TODO переписать этот говнокод когда-нибудь
 public class DBService {
-    private UserDAO userDAO = new JdbcUserDAO();
+    private UserDAO userDAO = new HibernateUserDAO();
     private ContentDAO contentDAO = new ContentDAO();
     private TypeDAO typeDAO = new TypeDAO();
     private ImageDAO imageDAO = new ImageDAO();
@@ -20,9 +20,9 @@ public class DBService {
     public void removeContent(String[] args){ contentDAO.remove(new Content(Integer.parseInt(args[1]),0,0,0,0,"",""));}
     public ArrayList<Content> getContent() { return contentDAO.getAll(); }
 
-    public void addType(String[] args){ typeDAO.create(new Type(0,args[1])); }
-    public void removeType(String[] args){ typeDAO.remove(new Type(Integer.parseInt(args[1]),"")); }
-    public ArrayList<Type> getType() { return typeDAO.getAll(); }
+    //public void addType(String[] args){ typeDAO.create(new Type(0,args[1])); }
+    //public void removeType(String[] args){ typeDAO.remove(new Type(Integer.parseInt(args[1]),"")); }
+    //public ArrayList<Type> getType() { return typeDAO.getAll(); }
 
     public void addImage(String[] args){ imageDAO.create(new Image(Integer.parseInt(args[1]),args[2])); }
     public void removeImage(String[] args){ imageDAO.remove(new Image(Integer.parseInt(args[1]),"")); }

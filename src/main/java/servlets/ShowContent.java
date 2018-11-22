@@ -14,9 +14,9 @@ public class ShowContent extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
         DBService dbService = new DBService();
-        ArrayList<Type> posts = dbService.getType();
+        //ArrayList<Type> posts = dbService.getType();
 
-        request.setAttribute("posts", posts);
+        //request.setAttribute("posts", posts);
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/jsp/index.jsp");
         dispatcher.forward(request, response);

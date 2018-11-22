@@ -15,7 +15,7 @@ public class Remove extends Command {
                 this.dbService.removeContent(args);
                 break;
             case "type":
-                this.dbService.removeType(args);
+                //this.dbService.removeType(args);
                 break;
             case "image":
                 this.dbService.removeImage(args);

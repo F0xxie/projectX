@@ -37,7 +37,7 @@ public class TypeDAO {
             Connection connect = this.myDBController.connect();
             ResultSet rs = this.myDBController.inquiryWithResult("select * from content_type");
             while (rs.next()) {
-                types.add(new Type(rs.getInt(1), rs.getString(2)));
+                //types.add(new Type(rs.getInt(1), rs.getString(2)));
             }
             connect.close();
         }

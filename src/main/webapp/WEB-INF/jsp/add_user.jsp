@@ -21,8 +21,6 @@
 <body>
 
 <div class="container">
-    <a href="/users"><< Back</a>
-
     <h2>User control:</h2>
     <form>
         <div class="form-group">
@@ -32,6 +30,7 @@
             <input type="password" class="form-control" name="last_name" placeholder="Password" required>
         </div>
         <button type="submit" class="btn btn-primary" id="user_add">Save</button>
+        <a href="/users" class="btn btn-primary" role="button">Cancel</a>
     </form>
     <br>
 </div>
