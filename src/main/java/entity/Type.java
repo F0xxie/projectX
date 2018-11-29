@@ -14,6 +14,11 @@ public class Type implements Serializable {
     private int type_id;
     private String type;
 
+    public Type(int anInt, String string) {
+        type_id = anInt;
+        type = string;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "type_id")
