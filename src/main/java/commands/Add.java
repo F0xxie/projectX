@@ -11,19 +11,9 @@ public class Add extends Command {
             case "user":
                 this.dbService.addUser(args);
                 break;
-            case "content":
-                this.dbService.addContent(args);
-                break;
             case "type":
-                //this.dbService.addType(args);
-                break;
-            case "image":
-                this.dbService.addImage(args);
-                break;
-            case "vote": {
-                this.dbService.addVote(args);
+                this.dbService.addType(args);
                 break;
             }
         }
     }
-}

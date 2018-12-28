@@ -1,7 +1,8 @@
 package servlets;
 
-import dao.TypeDAO;
+import dao.JdbcTypeDAO;
 import entity.Type;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -11,7 +12,7 @@ import java.io.IOException;
 
 public class AddContent extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        TypeDAO typeDAO = new TypeDAO();
+        JdbcTypeDAO jdbcTypeDAO = new JdbcTypeDAO();
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/jsp/add_post.jsp");
 
@@ -19,6 +20,6 @@ public class AddContent extends HttpServlet {
         dispatcher.forward(request, response);
 
         String final_pbody = postbody.replace("'", "`");
-        //typeDAO.create(new Type(0, final_pbody));
+        jdbcTypeDAO.create(new Type(0, final_pbody));
     }
 }

@@ -19,6 +19,7 @@
 
         <property name="connection.pool_size">100</property>
 
-        <mapping class="entity.Type" />
+        <mapping class="entity.User"/>
+        <mapping class="entity.Type"/>
     </session-factory>
 </hibernate-configuration>

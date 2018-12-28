@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="dao.TypeDAO" %>
+<%@ page import="dao.JdbcTypeDAO" %>
 <%@ page import="entity.Type" %>
 <%@ page import="java.util.function.Function" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>

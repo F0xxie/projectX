@@ -1,5 +1,6 @@
 package servlets;
 
+import dao.HibernateUserDAO;
 import dao.JdbcUserDAO;
 import dao.UserDAO;
 import entity.User;
@@ -14,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class ShowUsers extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        UserDAO userDAO = new JdbcUserDAO();
+        UserDAO userDAO = new HibernateUserDAO();
         DBService dbService = new DBService();
         ArrayList<User> users = dbService.getUsers();
         Integer id_to_delete = -1;

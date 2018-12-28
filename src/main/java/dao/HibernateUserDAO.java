@@ -4,6 +4,7 @@ import entity.User;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import utils.HibernateSessionFactory;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -22,7 +23,6 @@ public class HibernateUserDAO implements UserDAO {
             User userE = new User();
             userE.setLogin(user.getLogin());
             userE.setPassword(user.getPassword());
-            //employee.setSalary(salary);
             userID = (Integer) session.save(userE);
             tx.commit();
         } catch (HibernateException e) {
@@ -31,25 +31,39 @@ public class HibernateUserDAO implements UserDAO {
         } finally {
             session.close();
         }
-        //return userID;
     }
 
     @Override
     public void remove(User user) {
+        Session session = HibernateSessionFactory.getSession().getSession();
+        Transaction tx = null;
+
+        try {
+            tx = session.beginTransaction();
+            User userE = new User();
+            userE.setId(user.getId());
+            session.delete(userE);
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx!=null) tx.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
     }
 
     @Override
     public ArrayList<User> getAll() {
         Session session = HibernateSessionFactory.getSession().getSession();
         Transaction tx = null;
+        ArrayList<User> users = new ArrayList<User>();
 
         try {
             tx = session.beginTransaction();
-            List users = session.createQuery("FROM users").list();
+            users = new ArrayList(session.createQuery("FROM entity.User").list());
             for (Iterator iterator = users.iterator(); iterator.hasNext();){
-                User employee = (User) iterator.next();
-                System.out.print("L: " + employee.getLogin());
-                System.out.print("P: " + employee.getPassword());
+                User user = (User) iterator.next();
+                System.out.print(user.getId() + ": " + user.getLogin() + "/" + user.getPassword() + "\n");
             }
             tx.commit();
         } catch (HibernateException e) {
@@ -58,6 +72,6 @@ public class HibernateUserDAO implements UserDAO {
         } finally {
             session.close();
         }
-        return null;
+        return users;
     }
 }
