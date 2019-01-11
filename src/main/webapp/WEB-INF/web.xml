@@ -17,12 +17,20 @@
         <servlet-class>servlets.ShowContent</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>ShowTags</servlet-name>
+        <servlet-class>servlets.ShowTags</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>AddContent</servlet-name>
         <servlet-class>servlets.AddContent</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AddUser</servlet-name>
         <servlet-class>servlets.AddUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddTag</servlet-name>
+        <servlet-class>servlets.AddTag</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -34,12 +42,20 @@
         <url-pattern></url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>ShowTags</servlet-name>
+        <url-pattern>/tags</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>AddContent</servlet-name>
         <url-pattern>/newpost</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>AddUser</servlet-name>
         <url-pattern>/users/new</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddTag</servlet-name>
+        <url-pattern>/tags/new</url-pattern>
     </servlet-mapping>
 
 </web-app>

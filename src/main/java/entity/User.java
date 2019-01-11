@@ -32,8 +32,7 @@ public class User implements Serializable {
     public void setPassword(String password) {this.password = password; }
 
     //для jdbc
-    public User() {
-    }
+    public User() { }
     public User(int id, String l, String p) {
         this.user_id = id;
         this.login = l;

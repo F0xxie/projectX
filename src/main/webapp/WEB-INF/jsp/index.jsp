@@ -1,7 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="entity.Type" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +19,7 @@
 
 <div class="container">
     <a href="users">users</a>
+    <a href="tags">tags</a>
     <br><br><br>
     <h2>Main page</h2>
     <p>Nothing to see here</p>
@@ -31,7 +29,12 @@
         <tbody>
         <c:forEach var = "post" items = "${posts}">
         <tr>
-            <td><c:out value="${post.type}"/></td>
+            <td>
+                <c:out value="${post.type}"/>
+                <br>
+                <c:out value="${post.id} | " />
+                <c:out value="#placeholder"/>
+            </td>
         </tr>
         </c:forEach>
         </tbody>

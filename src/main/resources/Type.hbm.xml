@@ -5,14 +5,10 @@
 <hibernate-mapping>
     <class name = "entity.Type" table = "content_type">
 
-        <meta attribute = "class-description">
-            This class contains the content details.
-        </meta>
-
         <id name = "id" type = "int" column = "type_id">
             <generator class="identity"/>
         </id>
 
-        <property name = "type" column = "type"/>
+        <property name = "type" column = "type" type = "text"/>
     </class>
 </hibernate-mapping>
