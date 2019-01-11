@@ -26,10 +26,10 @@ public class ShowTags extends HttpServlet {
 
         request.setAttribute("tags", tags);
 
-        String tagId = request.getParameter("tagId");
-        dispatcher.forward(request, response);
-        String[] tagIdS = new String[] { tagId };
-
-        tagDAO.remove(new Tag(Integer.parseInt(tagId),""));
+//        String tagId = request.getParameter("tagId");
+//        dispatcher.forward(request, response);
+//        String[] tagIdS = new String[] { tagId };
+//
+//        tagDAO.remove(new Tag(Integer.parseInt(tagId),""));
     }
 }

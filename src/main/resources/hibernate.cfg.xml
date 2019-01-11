@@ -22,5 +22,6 @@
         <mapping class="entity.User"/>
         <mapping class="entity.Type"/>
         <mapping class="entity.Tag"/>
+        <mapping class="entity.ContentTag"/>
     </session-factory>
 </hibernate-configuration>

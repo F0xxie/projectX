@@ -24,9 +24,9 @@ public class ShowUsers extends HttpServlet {
 
         request.setAttribute("users", users);
 
-        String userId = request.getParameter("userId");
-        dispatcher.forward(request, response);
-
-        userDAO.remove(new User(Integer.parseInt(userId),"",""));
+//        String userId = request.getParameter("userId");
+//        dispatcher.forward(request, response);
+//
+//        userDAO.remove(new User(Integer.parseInt(userId),"",""));
     }
 }

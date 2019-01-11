@@ -6,9 +6,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+//todo rename
 @Entity
 @Table(name = "content_type")
 public class Type implements Serializable {
+//    todo - rename to id
     private int type_id;
     private String type;
 

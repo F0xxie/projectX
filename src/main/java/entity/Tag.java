@@ -30,6 +30,7 @@ public class Tag implements Serializable {
     }
 
     @ManyToMany(mappedBy = "tags")
+    //TODO lazy fetch or remove
     private Set<Type> types = new HashSet<>();
 
     public Tag() { }
