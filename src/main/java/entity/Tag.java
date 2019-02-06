@@ -2,8 +2,6 @@ package entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "tags")
@@ -28,10 +26,6 @@ public class Tag implements Serializable {
     public void setTag(String tag) {
         this.tag = tag;
     }
-
-    @ManyToMany(mappedBy = "tags")
-    //TODO lazy fetch or remove
-    private Set<Type> types = new HashSet<>();
 
     public Tag() { }
     public Tag(int anInt, String string) {

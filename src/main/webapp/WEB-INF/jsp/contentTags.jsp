@@ -28,38 +28,30 @@
 <div class="container">
     <a href="/"><< Back</a>
     <br>
-    <h2>Users</h2>
-    <p>The list of users:</p>
-    <table id="users_table" class="table table-hover">
+    <h2>Content tags</h2>
+    <p>The join table of tags and content:</p>
+    <table id="content_tags_table" class="table table-hover">
         <thead>
         <tr>
             <th>ID</th>
-            <th>Login</th>
-            <th>Password</th>
-            <th width="85px"></th>
+            <th>Content ID</th>
+            <th>Tag ID</th>
         </tr>
         </thead>
         <tbody>
-        <c:forEach var = "user" items = "${users}">
-        <tr>
-            <td><c:out value="${user.id}"/></td>
-            <td><c:out value="${user.login}"/></td>
-            <td><c:out value="${user.password}"/></td>
-            <td width="85px">
-                <%-- <button type="submit" class="icon"><i class="fa fa-edit"></i></button> --%>
-                <form>
-                    <input type="hidden" name="userId" value="${user.id}">
-                    <button type="submit" class="icon"><i class="fa fa-trash"></i></button>
-                </form>
-            </td>
-        </tr>
+        <c:forEach var = "content_tags" items = "${content_tags}">
+            <tr>
+                <td><c:out value="${content_tags.id}"/></td>
+                <td><c:out value="${content_tags.j_type_id}"/></td>
+                <td><c:out value="${content_tags.j_tag_id}"/></td>
+            </tr>
         </c:forEach>
         </tbody>
     </table>
 </div>
 
 <div class="container">
-    <a href="users/new" class="btn btn-primary" role="button">New user</a>
+    <a href="contenttags/new" class="btn btn-primary" role="button">Add</a>
 </div>
 
 </body>

@@ -24,10 +24,10 @@
     <h2>User control:</h2>
     <form>
         <div class="form-group">
-            <input type="text" class="form-control" name = "first_name" placeholder="Username" required>
+            <input type="text" class="form-control" name = "nickname" placeholder="Username" required>
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" name="last_name" placeholder="Password" required>
+            <input type="password" class="form-control" name="password" placeholder="Password" required>
         </div>
         <button type="submit" class="btn btn-primary" id="user_add">Save</button>
         <a href="/users" class="btn btn-primary" role="button">Cancel</a>

@@ -1,11 +1,7 @@
 package servlets;
 
-import dao.HibernateUserDAO;
-import dao.JdbcUserDAO;
 import dao.TagDAO;
-import dao.UserDAO;
 import entity.Tag;
-import entity.User;
 import utils.DBService;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -26,10 +22,10 @@ public class ShowTags extends HttpServlet {
 
         request.setAttribute("tags", tags);
 
-//        String tagId = request.getParameter("tagId");
-//        dispatcher.forward(request, response);
-//        String[] tagIdS = new String[] { tagId };
-//
-//        tagDAO.remove(new Tag(Integer.parseInt(tagId),""));
+        String tagId = request.getParameter("tagId");
+        dispatcher.forward(request, response);
+        //String[] tagIdS = new String[] { tagId };
+
+        tagDAO.remove(new Tag(Integer.parseInt(tagId),""));
     }
 }

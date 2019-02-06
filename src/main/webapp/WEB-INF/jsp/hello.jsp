@@ -18,26 +18,17 @@
 </head>
 <body>
 
-<div class="container">
-    <a href="users">users</a>
-    <a href="tags">tags</a>
-    <br><br><br>
-    <h2>Main page</h2>
-    <p>Nothing to see here</p>
-    <a href="newpost" class="btn btn-info" role="button">Add post</a>
-    <br><br>
-    <table class="table table-borderless table-hover">
-        <tbody>
-        <c:forEach var = "post" items = "${message}">
-            <tr>
-                <td>
-                    <c:out value="${post.content}"/>
-                </td>
-            </tr>
-        </c:forEach>
-        </tbody>
-    </table>
-</div>
-
+<table class="table table-borderless table-hover">
+    <tbody>
+        <tr>
+            <td>
+                <p>${content}</p>
+            </td>
+            <td>
+                <p>test2</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
 </body>
 </html>

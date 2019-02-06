@@ -15,8 +15,8 @@ public class AddUser extends HttpServlet {
         UserDAO userDAO = new JdbcUserDAO();
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/jsp/add_user.jsp");
-        String nickname = request.getParameter("first_name");
-        String password = request.getParameter("last_name");
+        String nickname = request.getParameter("nickname");
+        String password = request.getParameter("password");
         dispatcher.forward(request, response);
 
         if(nickname != null){

@@ -18,18 +18,28 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="user_id")
-    public int getId() { return user_id; }
-    public void setId(int id) { this.user_id = id; }
+    public int getId() {
+        return user_id;
+    }
+    public void setId(int id) {
+        this.user_id = id;
+    }
 
     @Column(name="login")
-    public String getLogin() { return login; }
-    public void setLogin(String login) { this.login = login; }
+    public String getLogin() {
+        return login;
+    }
+    public void setLogin(String login) {
+        this.login = login;
+    }
 
     @Column(name="password")
     public String getPassword() {
         return this.password;
     }
-    public void setPassword(String password) {this.password = password; }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     //для jdbc
     public User() { }

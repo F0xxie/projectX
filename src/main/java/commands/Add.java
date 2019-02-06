@@ -12,7 +12,7 @@ public class Add extends Command {
                 this.dbService.addUser(args);
                 break;
             case "type":
-                this.dbService.addType(args);
+                this.dbService.addContent(args);
                 break;
             }
         }

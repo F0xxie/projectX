@@ -12,7 +12,7 @@ public class Remove extends Command {
                 this.dbService.removeUser(args);
                 break;
             case "type":
-                this.dbService.removeType(args);
+                this.dbService.removeContent(args);
                 break;
             }
         }

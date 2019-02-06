@@ -1,61 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-	id="WebApp_ID" version="3.1">
-	<display-name>Web Application from Archetype for Servlet 3.1</display-name>
-	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
-	</welcome-file-list>
+<web-app id = "WebApp_ID" version = "2.4"
+         xmlns = "http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation = "http://java.sun.com/xml/ns/j2ee
+   http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+    <display-name>Spring MVC Application</display-name>
 
     <servlet>
-        <servlet-name>ShowUsers</servlet-name>
-        <servlet-class>servlets.ShowUsers</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ShowContent</servlet-name>
-        <servlet-class>servlets.ShowContent</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ShowTags</servlet-name>
-        <servlet-class>servlets.ShowTags</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>AddContent</servlet-name>
-        <servlet-class>servlets.AddContent</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>AddUser</servlet-name>
-        <servlet-class>servlets.AddUser</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>AddTag</servlet-name>
-        <servlet-class>servlets.AddTag</servlet-class>
+        <servlet-name>HelloWeb</servlet-name>
+        <servlet-class>
+            org.springframework.web.servlet.DispatcherServlet
+        </servlet-class>
+        <load-on-startup>1</load-on-startup>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>ShowUsers</servlet-name>
-        <url-pattern>/users</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ShowContent</servlet-name>
-        <url-pattern></url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ShowTags</servlet-name>
-        <url-pattern>/tags</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AddContent</servlet-name>
-        <url-pattern>/newpost</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AddUser</servlet-name>
-        <url-pattern>/users/new</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AddTag</servlet-name>
-        <url-pattern>/tags/new</url-pattern>
+        <servlet-name>HelloWeb</servlet-name>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 
 </web-app>

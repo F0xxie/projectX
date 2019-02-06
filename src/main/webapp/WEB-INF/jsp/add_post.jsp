@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page import="dao.JdbcTypeDAO" %>
-<%@ page import="entity.Type" %>
+<%@ page import="entity.Content" %>
 <%@ page import="java.util.function.Function" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -21,12 +22,14 @@
     <br>
     <h2>New post</h2>
     <br>
-    <textarea class="form-control" rows="5" id="tfield" name="postbody" form="text_body_field" required></textarea>
+    <div align="left">
+        <form id="contentForm" action="" method="post">
+        <label>Post: </label> <input name="content" value="" type="text"><br>
+            <button class="btn btn-primary" type="submit">Create</button>
+            <a href="/" class="btn btn-primary" role="button">Cancel</a>
+        </form>
+    </div>
     <br>
-    <form id="text_body_field">
-        <button type="submit" class="btn btn-primary" id="post_add">Add</button>
-        <a href="/" class="btn btn-primary" role="button">Cancel</a>
-    </form>
 </div>
 </body>
 </html>

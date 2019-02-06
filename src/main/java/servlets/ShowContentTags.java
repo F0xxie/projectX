@@ -1,8 +1,10 @@
 package servlets;
 
+import dao.ContentTagDAO;
 import dao.HibernateUserDAO;
 import dao.JdbcUserDAO;
 import dao.UserDAO;
+import entity.ContentTag;
 import entity.User;
 import utils.DBService;
 import java.io.IOException;
@@ -13,20 +15,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ShowUsers extends HttpServlet {
+public class ShowContentTags extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        UserDAO userDAO = new HibernateUserDAO();
+        ContentTagDAO contentTagDAO = new ContentTagDAO();
         DBService dbService = new DBService();
-        ArrayList<User> users = dbService.getUsers();
+        ArrayList<ContentTag> contentTags = contentTagDAO.getAll();
         Integer id_to_delete = -1;
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/jsp/users.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/jsp/contentTags.jsp");
 
-        request.setAttribute("users", users);
+        request.setAttribute("content_tags", contentTags);
 
-        String userId = request.getParameter("userId");
+        //String userId = request.getParameter("userId");
         dispatcher.forward(request, response);
 
-        userDAO.remove(new User(Integer.parseInt(userId),"",""));
+        //userDAO.remove(new User(Integer.parseInt(userId),"",""));
     }
 }
